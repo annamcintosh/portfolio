@@ -10,8 +10,10 @@ import Hidden from "@material-ui/core/Hidden";
 import { Divider, Link } from "@material-ui/core";
 
 const useStyles = makeStyles({
+  grid: {
+      justifyItems: "center"
+  },
   card: {
-    display: "flex",
     padding: "10px",
     margin: "10px",
   },
@@ -28,7 +30,7 @@ const projects = [
     title: "Affirmation-Mart",
     environment: "React, DynamoDB, Serverless, etc etc etc",
     description: "An uplifting twist on e-commerce",
-    github: "Github",
+    github: "https://github.com/annamcintosh/affirmation-mart-frontend",
     url: "Deployed Site",
     image: "",
     imageTitle: "",
@@ -37,8 +39,8 @@ const projects = [
     title: "Stay Tonight ATL",
     environment: "React, DynamoDB, Serverless, etc etc etc",
     description: "An uplifting twist on e-commerce",
-    github: "",
-    url: "",
+    github: "https://github.com/annamcintosh/stay-tonight-atl",
+    url: "https://stay-tonight-atl.herokuapp.com/",
     image: "",
     imageTitle: "",
   },
@@ -57,40 +59,37 @@ export default function Projects() {
   const classes = useStyles();
 
   return (
-    <Grid container xs={12} md={8}>
+    <Grid xs={12} md={10} className={classes.grid}>
       {projects.map((project) => (
-        <CardActionArea component="a">
-          {/* <CardActionArea component="a" href={project.url}> */}
-          <Card className={classes.card}>
-            <div className={classes.cardDetails}>
-              <CardContent>
-                <Typography component="h2" variant="h4">
-                  {project.title}
-                </Typography>
-                <Typography variant="subtitle1" paragraph>
-                  Environment: {project.environment}
-                </Typography>
-                <Typography variant="subtitle1" paragraph>
-                  {project.description}
-                </Typography>
-                <Link variant="subtitle1" href={project.github}>
-                  Deployed Site
-                </Link>
-                <Divider style={{ margin: "10px" }} />
-                <Link variant="subtitle1" href={project.github}>
-                  Github
-                </Link>
-              </CardContent>
-            </div>
-            <Hidden xsDown>
-              <CardMedia
-                className={classes.cardMedia}
-                image={project.image}
-                title={project.imageTitle}
-              />
-            </Hidden>
-          </Card>
-        </CardActionArea>
+        <Card className={classes.card}>
+          <div className={classes.cardDetails}>
+            <CardContent>
+              <Typography component="h2" variant="h4">
+                {project.title}
+              </Typography>
+              <Typography variant="subtitle1" paragraph>
+                Environment: {project.environment}
+              </Typography>
+              <Typography variant="subtitle1" paragraph>
+                {project.description}
+              </Typography>
+              <Link variant="subtitle1" href={project.github} target="_blank">
+                Deployed Site
+              </Link>
+              <Divider style={{ margin: "10px" }} />
+              <Link variant="subtitle1" href={project.github} target="_blank">
+                Github
+              </Link>
+            </CardContent>
+          </div>
+          <Hidden xsDown>
+            <CardMedia
+              className={classes.cardMedia}
+              image={project.image}
+              title={project.imageTitle}
+            />
+          </Hidden>
+        </Card>
       ))}
     </Grid>
   );

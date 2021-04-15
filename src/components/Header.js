@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   toolbarTitle: {
-    // flex: 1,
+    paddingLeft: "15px"
   },
   Box: {
     // overflowX: "auto",
@@ -28,21 +28,26 @@ export default function Header() {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Typography
-          component="h2"
+        <Link
+          // component="h2"
           variant="h5"
+          key="home"
           color="inherit"
           noWrap
           className={classes.toolbarTitle}
+          href="/"
+          style={{ textDecoration: "none" }}
         >
-          Anna L. McIntosh
-        </Typography>
-        <img
-          style={{ width: "100px", marginLeft: "10px", marginRight: "10px" }}
-          src="https://annamcintosh-portfolio.s3.amazonaws.com/MonogramBlockA-M.png"
-          alt="monogram with the letters a and m"
-        />
-        <Link
+          Anna McIntosh
+        </Link>
+        <a href="/">
+          <img
+            style={{ width: "100px", marginLeft: "10px", marginRight: "10px" }}
+            src="https://annamcintosh-portfolio.s3.amazonaws.com/MonogramBlockA-M.png"
+            alt="monogram with the letters a and m"
+          />
+        </a>
+        {/* <Link
           color="inherit"
           key="home"
           variant="body2"
@@ -50,14 +55,15 @@ export default function Header() {
           className={classes.toolbarLink}
         >
           Home
-        </Link>
-        <Typography>/</Typography>
+        </Link> */}
+        {/* <Typography>/</Typography> */}
         <Link
           color="inherit"
           key="about"
           variant="body2"
           href="/about"
           className={classes.toolbarLink}
+          style={{ textDecoration: "none" }}
         >
           About
         </Link>
@@ -68,6 +74,7 @@ export default function Header() {
           variant="body2"
           href="/projects"
           className={classes.toolbarLink}
+          style={{ textDecoration: "none" }}
         >
           Projects
         </Link>
@@ -78,6 +85,7 @@ export default function Header() {
           variant="body2"
           href="/contact"
           className={classes.toolbarLink}
+          style={{ textDecoration: "none" }}
         >
           Contact
         </Link>

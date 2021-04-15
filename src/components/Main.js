@@ -39,20 +39,17 @@ const useStyles = makeStyles((theme) => ({
 const featuredPosts = [
   {
     title: "About",
-    description:
-      "Read some of my story.",
+    description: "Read some of my story.",
     url: "/about",
   },
   {
     title: "Projects",
-    description:
-      "Take a look at some favorite projects.",
+    description: "Take a look at some favorite projects.",
     url: "/projects",
   },
   {
     title: "Contact",
-    description:
-      "Let's connect.",
+    description: "Let's connect.",
     url: "/contact",
   },
 ];
@@ -78,7 +75,7 @@ export default function Main() {
                 color="inherit"
                 gutterBottom
               >
-                Anna L. McIntosh
+                Anna McIntosh
               </Typography>
               <Typography variant="h5" color="inherit" paragraph>
                 Software Engineer
