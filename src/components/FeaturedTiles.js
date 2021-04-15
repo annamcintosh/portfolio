@@ -27,7 +27,7 @@ export default function FeaturedTiles(props) {
 
   return (
     <Grid item xs={12} md={4}>
-      <CardActionArea component="a" href="#">
+      <CardActionArea component="a" href={post.url}>
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
             <CardContent>
@@ -42,9 +42,6 @@ export default function FeaturedTiles(props) {
               </Typography>
             </CardContent>
           </div>
-          {/* <Hidden xsDown>
-            <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
-          </Hidden> */}
         </Card>
       </CardActionArea>
     </Grid>

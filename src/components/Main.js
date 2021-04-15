@@ -40,23 +40,20 @@ const featuredPosts = [
   {
     title: "About",
     description:
-      "Learn more about Anna.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
+      "Read some of my story.",
+    url: "/about",
   },
   {
     title: "Projects",
     description:
       "Take a look at some favorite projects.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
+    url: "/projects",
   },
   {
     title: "Contact",
     description:
       "Let's connect.",
-    image: "https://source.unsplash.com/random",
-    imageText: "Image Text",
+    url: "/contact",
   },
 ];
 export default function Main() {
@@ -81,7 +78,7 @@ export default function Main() {
                 color="inherit"
                 gutterBottom
               >
-                Anna McIntosh
+                Anna L. McIntosh
               </Typography>
               <Typography variant="h5" color="inherit" paragraph>
                 Software Engineer

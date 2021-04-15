@@ -8,7 +8,7 @@ import { Box } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    justifyContent: "space-between",
+    justifyContent: "center",
   },
   toolbarTitle: {
     // flex: 1,
@@ -22,9 +22,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header(props) {
+export default function Header() {
   const classes = useStyles();
-  // const sections = [{title: "About"}, {title: "Projects"}, {title: "Contact"}];
 
   return (
     <React.Fragment>
@@ -34,21 +33,30 @@ export default function Header(props) {
           variant="h5"
           color="inherit"
           noWrap
-          // style={{ paddingRight: "150px" }}
           className={classes.toolbarTitle}
         >
-          Anna McIntosh
+          Anna L. McIntosh
         </Typography>
         <img
-          style={{ width: "100px" }}
+          style={{ width: "100px", marginLeft: "10px", marginRight: "10px" }}
           src="https://annamcintosh-portfolio.s3.amazonaws.com/MonogramBlockA-M.png"
           alt="monogram with the letters a and m"
         />
         <Link
           color="inherit"
-          // key={}
+          key="home"
           variant="body2"
-          // href={}
+          href="/"
+          className={classes.toolbarLink}
+        >
+          Home
+        </Link>
+        <Typography>/</Typography>
+        <Link
+          color="inherit"
+          key="about"
+          variant="body2"
+          href="/about"
           className={classes.toolbarLink}
         >
           About
@@ -56,9 +64,9 @@ export default function Header(props) {
         <Typography>/</Typography>
         <Link
           color="inherit"
-          // key={}
+          key="projects"
           variant="body2"
-          // href={}
+          href="/projects"
           className={classes.toolbarLink}
         >
           Projects
@@ -66,9 +74,9 @@ export default function Header(props) {
         <Typography>/</Typography>
         <Link
           color="inherit"
-          // key={}
+          key="contact"
           variant="body2"
-          // href={}
+          href="/contact"
           className={classes.toolbarLink}
         >
           Contact
