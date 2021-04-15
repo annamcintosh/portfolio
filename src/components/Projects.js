@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Hidden from "@material-ui/core/Hidden";
@@ -11,7 +10,9 @@ import { Divider, Link } from "@material-ui/core";
 
 const useStyles = makeStyles({
   grid: {
-      justifyItems: "center"
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
   },
   card: {
     padding: "10px",
@@ -59,7 +60,7 @@ export default function Projects() {
   const classes = useStyles();
 
   return (
-    <Grid xs={12} md={10} className={classes.grid}>
+    <Grid xs={12} md={12} className={classes.grid}>
       {projects.map((project) => (
         <Card className={classes.card}>
           <div className={classes.cardDetails}>

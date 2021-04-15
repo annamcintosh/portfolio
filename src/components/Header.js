@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -11,10 +10,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   toolbarTitle: {
-    paddingLeft: "15px"
-  },
-  Box: {
-    // overflowX: "auto",
+    paddingLeft: "15px",
   },
   toolbarLink: {
     padding: theme.spacing(1),
@@ -29,7 +25,6 @@ export default function Header() {
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
         <Link
-          // component="h2"
           variant="h5"
           key="home"
           color="inherit"
@@ -47,16 +42,6 @@ export default function Header() {
             alt="monogram with the letters a and m"
           />
         </a>
-        {/* <Link
-          color="inherit"
-          key="home"
-          variant="body2"
-          href="/"
-          className={classes.toolbarLink}
-        >
-          Home
-        </Link> */}
-        {/* <Typography>/</Typography> */}
         <Link
           color="inherit"
           key="about"
