@@ -6,30 +6,32 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Hidden from "@material-ui/core/Hidden";
-import { Avatar, Link } from "@material-ui/core";
+import { Avatar, Box, Link } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
 
 const useStyles = makeStyles((theme) => ({
-  grid: {
-    display: "flex",
-    flexDirection: "column-reverse",
-    // alignItems: "center"
-  },
   card: {
-    padding: "10px",
-    margin: "10px",
+    display: "flex",
+    marginTop: "20px",
+    justifyContent: "center",
   },
   cardDetails: {
-    flex: 1,
+    // flex: 1,
+    display: "flex",
+    // flexDirection: "column",
+
+    alignItems: "center",
     justifyContent: "center",
-    alignItems: "baseline",
-    marginBottom: theme.spacing(2),
+    // flexDirection: "column",
+    // // flex: 1,
+    // justifyContent: "center",
+    // marginBottom: theme.spacing(2),
   },
-  cardMedia: {
-    width: 160,
-  },
+  //   cardMedia: {
+  //     width: 160,
+  //   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.primary.main,
@@ -64,29 +66,34 @@ export default function Contact() {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={3} className={classes.grid}>
-      <Grid item xs={12} md={4}>
-        {contactInfo.map((contactInfo) => (
+    <Grid container spacing={3} style={{ justifyContent: "center" }}>
+      {contactInfo.map((contactInfo) => (
+        <Grid item xs={12} md={3}>
           <Card className={classes.card}>
-            <CardContent className={classes.cardDetails}>
-              <Avatar className={classes.avatar}>{contactInfo.icon}</Avatar>
-              <Typography component="h2" variant="h4">
-                {contactInfo.title}
-              </Typography>
-              {contactInfo.email ? (
-                <Typography variant="subtitle1" paragraph>
-                  {contactInfo.email}
-                </Typography>
-              ) : (
-                <Link
-                  variant="subtitle1"
-                  href={contactInfo.url}
-                  target="_blank"
+            <Box className={classes.cardDetails}>
+              <CardContent>
+                <Avatar className={classes.avatar}>{contactInfo.icon}</Avatar>
+                <Typography
+                  component="h2"
+                  variant="h4"
                 >
-                  Go to {contactInfo.title}
-                </Link>
-              )}
-            </CardContent>
+                  {contactInfo.title}
+                </Typography>
+                {contactInfo.email ? (
+                  <Typography variant="subtitle1" paragraph>
+                    {contactInfo.email}
+                  </Typography>
+                ) : (
+                  <Link
+                    variant="subtitle1"
+                    href={contactInfo.url}
+                    target="_blank"
+                  >
+                    Go to {contactInfo.title}
+                  </Link>
+                )}
+              </CardContent>
+            </Box>
             <Hidden xsDown>
               <CardMedia
                 className={classes.cardMedia}
@@ -95,8 +102,8 @@ export default function Contact() {
               />
             </Hidden>
           </Card>
-        ))}
-      </Grid>
+        </Grid>
+      ))}
     </Grid>
   );
 }
