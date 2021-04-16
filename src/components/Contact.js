@@ -17,17 +17,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "20px",
     justifyContent: "center",
   },
-  cardDetails: {
-    // flex: 1,
+  cardContent: {
     display: "flex",
-    // flexDirection: "column",
-
+    flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
-    // flexDirection: "column",
-    // // flex: 1,
-    // justifyContent: "center",
-    // marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(2),
   },
   //   cardMedia: {
   //     width: 160,
@@ -66,16 +60,17 @@ export default function Contact() {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={3} style={{ justifyContent: "center" }}>
+    <Grid container spacing={6}>
       {contactInfo.map((contactInfo) => (
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={4}>
           <Card className={classes.card}>
-            <Box className={classes.cardDetails}>
-              <CardContent>
+            <Box>
+              <CardContent className={classes.cardContent}>
                 <Avatar className={classes.avatar}>{contactInfo.icon}</Avatar>
                 <Typography
                   component="h2"
                   variant="h4"
+                  style={{ margin: "15px" }}
                 >
                   {contactInfo.title}
                 </Typography>
@@ -88,6 +83,7 @@ export default function Contact() {
                     variant="subtitle1"
                     href={contactInfo.url}
                     target="_blank"
+                    style={{marginBottom: "15px"}}
                   >
                     Go to {contactInfo.title}
                   </Link>
