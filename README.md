@@ -1,3 +1,19 @@
+# Anna McIntosh Portfolio
+
+This portfolio highlights who I am and the work I have done. My goals as I designed the site were accessibility and clarity. 
+
+### Link for AWS deployment
+
+Link for deployment
+[https://www.annamcintosh.dev](https://www.annamcintosh.dev/)
+
+## Technologies Used
+
+- React
+- Material-UI
+- AWS S3 and Cloudfront for deployment
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
