@@ -45,7 +45,7 @@ const projects = [
     description:
       "A full-stack single page web application that puts an uplifting twist on e-commerce. Users are given credits that allow them to order images of affirmations, delivered right to their email.",
     github: "https://github.com/annamcintosh/affirmation-mart-frontend",
-    url: "",
+    url: "https://affirmationmart.com",
     image: "",
     imageTitle: "",
   },
