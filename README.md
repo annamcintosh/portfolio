@@ -5,7 +5,7 @@ This portfolio highlights who I am and the work I have done. My goals as I desig
 ### Link for AWS deployment
 
 Link for deployment
-[https://annamcintosh.dev](https://annamcintosh.dev/)
+[annamcintosh.dev](annamcintosh.dev/)
 
 ## Technologies Used
 
